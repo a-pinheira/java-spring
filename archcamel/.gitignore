@@ -1,0 +1,8 @@
+//diretorios
+/target/
+
+
+/.settings/
+
+//arquivos
+.classpath
