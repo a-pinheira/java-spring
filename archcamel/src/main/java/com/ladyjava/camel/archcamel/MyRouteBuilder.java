@@ -1,6 +1,6 @@
 package com.ladyjava.camel.archcamel;
 
-//import org.apache.camel.Message;
+import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
 
 /**
@@ -18,9 +18,16 @@ public class MyRouteBuilder extends RouteBuilder {
 	public void configure() {
 		// here is a sample which set a raondom body then performs content
 		// based routing on the message using method references
-		from("file:src/entradas?noop=true");
-			.log("${body}");
-			
+		
+		/*
+		 * Esta tag(entradas?noop=true) igual a true, vai fazer uma copia, sem ela os arquivos são enviados 
+		 * para a saída e somem da pasta entrada 
+		 */
+//		from("file:src/entradas?noop=true")
+		from("file:src/entradas?noop=true")
+			.log("${body}")
+		.to("file:src/saidas");
+	
 	}
 
 }
