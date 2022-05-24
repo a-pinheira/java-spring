@@ -108,7 +108,7 @@
 				<version>3.16.0</version>
 				<configuration>
 					<logClasspath>true</logClasspath>
-					<mainClass>com.ladyjava.camel.samplecamel.MainApp</mainClass>
+					<mainClass>com.ladyjava.camel.samplecamel.App</mainClass>
 				</configuration>
 			</plugin>
 
