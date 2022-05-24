@@ -62,8 +62,6 @@
 			<artifactId>camel-main</artifactId>
 		</dependency>
 
-
-
 		<!-- logging -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
