@@ -18,7 +18,7 @@ import org.apache.camel.tooling.model.Strings;
  */
 public class RouteBuilderWithRecipientList {
 
-	public static void main(Strings args[]) throws ExceptionPolicy {
+	public static void main(Strings args[]) throws Exception {
 		// create CamelContext
 		CamelContext context = new DefaultCamelContext();
 
@@ -73,4 +73,14 @@ public class RouteBuilderWithRecipientList {
 			}
 		});
 	}
+	/*
+	 * public class myBEan {
+	 *    public String addTwo(String body){
+	 *       return body + "and two";
+	 *    } 
+	 *    public String addThree(String body){
+	 *       return body + "and three";
+	 *    }	 * }
+	 */
+	
 }

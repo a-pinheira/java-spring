@@ -1,20 +1,30 @@
 package com.ladyjava.camel.samplecamel;
 
-import org.apache.camel.main.Main;
+import org.apache.camel.CamelContext;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.support.jndi.JndiContext;
+
+import org.apache.camel.ProducerTemplate;
 
 /**
  * A Camel Application
  */
 public class App {
 
-    /**
-     * A main() so we can easily run these routing rules in our IDE
-     */
-    public static void main(String... args) throws Exception {
-        Main main = new Main();
-        main.configure().addRoutesBuilder(new RouteBuilderWithRecipientListBean());
-        main.run(args);
+    public static void main(String[] args) throws Exception {
+    	JndiContext jndiContext = new JndiContext();
+    	jndiContext.bind("routeBuilderWithRecipientListBean", new RouteBuilderWithRecipientListBean());
+    	CamelContext camelContext = new DefaultCamelContext(jndiContext);
+    	try {
+    		camelContext.addRoutes(new RouteBuilder() {
+    			public void configure() {
+    				from("direct:start")
+    				.log("Main route: '${body}' to tap router")
+    				.wireTap("direct:tap")
+    			}
+    		});
+    	}
     }
-
 }
 
