@@ -5,7 +5,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.support.jndi.JndiContext;
 
-import org.apache.camel.ProducerTemplate;
+import org.apache.camel.ProducerTemplate; 
 
 /**
  * A Camel Application
