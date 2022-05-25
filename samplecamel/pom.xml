@@ -56,7 +56,14 @@
 			<version>5.17.0</version>
 		</dependency>
 
-		<!-- FIM DAS dependencias que preciso neste projeto -->
+		<!-- https://mvnrepository.com/artifact/org.apache.camel/camel-spring -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring</artifactId>
+			<version>3.15.0</version>
+		</dependency>
+
+		<!-- FIM DAS dependencias que preciso neste projeto, falta commons e mysql -->
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-main</artifactId>
